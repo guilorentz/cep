@@ -14,5 +14,7 @@ namespace CEP.Models.Data
         }
 
         public DbSet<Cidade> Cidade { get; set; }
+        public DbSet<Estado> Estado { get; set; }
+        public DbSet<Pais> Pais { get; set; }
     }
 }

@@ -1,6 +1,4 @@
-﻿using CEP.Models.Data;
-using Microsoft.AspNetCore.Authentication;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,9 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace CEP.Models
-{   
-    [Table("Cidades")]
-    public class Cidade
+{
+    [Table("Estados")]
+    public class Estado
     {
         [Display(Name = "Id")]
         [Column("Id")]
@@ -19,7 +17,10 @@ namespace CEP.Models
         [Column("Nome")]
         public string Nome { get; set; }
 
-        public int EstadoID { get; set; }
-        public Estado Estado { get; set; }
+        public List<Cidade> Cidades { get; set; }
+
+        public int PaisId { get; set; }
+        public Pais Pais { get; set; }
+    
     }
 }
