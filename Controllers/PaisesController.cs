@@ -10,23 +10,22 @@ using CEP.Models.Data;
 
 namespace CEP.Controllers
 {
-    public class CidadesController : Controller
+    public class PaisesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public CidadesController(ApplicationDbContext context)
+        public PaisesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Cidades
+        // GET: Paises
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Cidade.Include(c => c.Estado);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.Pais.ToListAsync());
         }
 
-        // GET: Cidades/Details/5
+        // GET: Paises/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace CEP.Controllers
                 return NotFound();
             }
 
-            var cidade = await _context.Cidade
-                .Include(c => c.Estado)
+            var pais = await _context.Pais
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cidade == null)
+            if (pais == null)
             {
                 return NotFound();
             }
 
-            return View(cidade);
+            return View(pais);
         }
 
-        // GET: Cidades/Create
+        // GET: Paises/Create
         public IActionResult Create()
         {
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id");
             return View();
         }
 
-        // POST: Cidades/Create
+        // POST: Paises/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,EstadoId")] Cidade cidade)
+        public async Task<IActionResult> Create([Bind("Id,Nome")] Pais pais)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cidade);
+                _context.Add(pais);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id", cidade.EstadoId);
-            return View(cidade);
+            return View(pais);
         }
 
-        // GET: Cidades/Edit/5
+        // GET: Paises/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace CEP.Controllers
                 return NotFound();
             }
 
-            var cidade = await _context.Cidade.FindAsync(id);
-            if (cidade == null)
+            var pais = await _context.Pais.FindAsync(id);
+            if (pais == null)
             {
                 return NotFound();
             }
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id", cidade.EstadoId);
-            return View(cidade);
+            return View(pais);
         }
 
-        // POST: Cidades/Edit/5
+        // POST: Paises/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,EstadoId")] Cidade cidade)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome")] Pais pais)
         {
-            if (id != cidade.Id)
+            if (id != pais.Id)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace CEP.Controllers
             {
                 try
                 {
-                    _context.Update(cidade);
+                    _context.Update(pais);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CidadeExists(cidade.Id))
+                    if (!PaisExists(pais.Id))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace CEP.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id", cidade.EstadoId);
-            return View(cidade);
+            return View(pais);
         }
 
-        // GET: Cidades/Delete/5
+        // GET: Paises/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace CEP.Controllers
                 return NotFound();
             }
 
-            var cidade = await _context.Cidade
-                .Include(c => c.Estado)
+            var pais = await _context.Pais
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cidade == null)
+            if (pais == null)
             {
                 return NotFound();
             }
 
-            return View(cidade);
+            return View(pais);
         }
 
-        // POST: Cidades/Delete/5
+        // POST: Paises/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cidade = await _context.Cidade.FindAsync(id);
-            _context.Cidade.Remove(cidade);
+            var pais = await _context.Pais.FindAsync(id);
+            _context.Pais.Remove(pais);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CidadeExists(int id)
+        private bool PaisExists(int id)
         {
-            return _context.Cidade.Any(e => e.Id == id);
+            return _context.Pais.Any(e => e.Id == id);
         }
     }
 }

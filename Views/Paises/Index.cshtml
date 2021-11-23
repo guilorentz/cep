@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CEP.Models.Cidade>
+﻿@model IEnumerable<CEP.Models.Pais>
 
 @{
     ViewData["Title"] = "Index";
@@ -15,9 +15,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -26,9 +23,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado.Id)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

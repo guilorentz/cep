@@ -10,23 +10,23 @@ using CEP.Models.Data;
 
 namespace CEP.Controllers
 {
-    public class CidadesController : Controller
+    public class EstadosController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public CidadesController(ApplicationDbContext context)
+        public EstadosController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Cidades
+        // GET: Estados
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Cidade.Include(c => c.Estado);
+            var applicationDbContext = _context.Estado.Include(e => e.Pais);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Cidades/Details/5
+        // GET: Estados/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +34,42 @@ namespace CEP.Controllers
                 return NotFound();
             }
 
-            var cidade = await _context.Cidade
-                .Include(c => c.Estado)
+            var estado = await _context.Estado
+                .Include(e => e.Pais)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cidade == null)
+            if (estado == null)
             {
                 return NotFound();
             }
 
-            return View(cidade);
+            return View(estado);
         }
 
-        // GET: Cidades/Create
+        // GET: Estados/Create
         public IActionResult Create()
         {
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id");
+            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "Id");
             return View();
         }
 
-        // POST: Cidades/Create
+        // POST: Estados/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,EstadoId")] Cidade cidade)
+        public async Task<IActionResult> Create([Bind("Id,Nome,PaisId")] Estado estado)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(cidade);
+                _context.Add(estado);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id", cidade.EstadoId);
-            return View(cidade);
+            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "Id", estado.PaisId);
+            return View(estado);
         }
 
-        // GET: Cidades/Edit/5
+        // GET: Estados/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +77,23 @@ namespace CEP.Controllers
                 return NotFound();
             }
 
-            var cidade = await _context.Cidade.FindAsync(id);
-            if (cidade == null)
+            var estado = await _context.Estado.FindAsync(id);
+            if (estado == null)
             {
                 return NotFound();
             }
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id", cidade.EstadoId);
-            return View(cidade);
+            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "Id", estado.PaisId);
+            return View(estado);
         }
 
-        // POST: Cidades/Edit/5
+        // POST: Estados/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,EstadoId")] Cidade cidade)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,PaisId")] Estado estado)
         {
-            if (id != cidade.Id)
+            if (id != estado.Id)
             {
                 return NotFound();
             }
@@ -102,12 +102,12 @@ namespace CEP.Controllers
             {
                 try
                 {
-                    _context.Update(cidade);
+                    _context.Update(estado);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CidadeExists(cidade.Id))
+                    if (!EstadoExists(estado.Id))
                     {
                         return NotFound();
                     }
@@ -118,11 +118,11 @@ namespace CEP.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["EstadoId"] = new SelectList(_context.Estado, "Id", "Id", cidade.EstadoId);
-            return View(cidade);
+            ViewData["PaisId"] = new SelectList(_context.Pais, "Id", "Id", estado.PaisId);
+            return View(estado);
         }
 
-        // GET: Cidades/Delete/5
+        // GET: Estados/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +130,31 @@ namespace CEP.Controllers
                 return NotFound();
             }
 
-            var cidade = await _context.Cidade
-                .Include(c => c.Estado)
+            var estado = await _context.Estado
+                .Include(e => e.Pais)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (cidade == null)
+            if (estado == null)
             {
                 return NotFound();
             }
 
-            return View(cidade);
+            return View(estado);
         }
 
-        // POST: Cidades/Delete/5
+        // POST: Estados/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cidade = await _context.Cidade.FindAsync(id);
-            _context.Cidade.Remove(cidade);
+            var estado = await _context.Estado.FindAsync(id);
+            _context.Estado.Remove(estado);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CidadeExists(int id)
+        private bool EstadoExists(int id)
         {
-            return _context.Cidade.Any(e => e.Id == id);
+            return _context.Estado.Any(e => e.Id == id);
         }
     }
 }

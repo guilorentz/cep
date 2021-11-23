@@ -1,4 +1,3 @@
-C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\CEP.csproj.AssemblyReference.cache
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\CEP.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\CEP.AssemblyInfoInputs.cache
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\CEP.AssemblyInfo.cs
@@ -423,9 +422,20 @@ C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\CEP.dll
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\CEP.pdb
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\CEP.genruntimeconfig.cache
 C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\refs\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\CEP.csproj.AssemblyReference.cache
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Cidades\Create.cshtml.g.cs
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Cidades\Delete.cshtml.g.cs
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Cidades\Details.cshtml.g.cs
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Cidades\Edit.cshtml.g.cs
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Cidades\Index.cshtml.g.cs
-C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Estados\Create.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Estados\Delete.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Estados\Details.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Estados\Edit.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Estados\Index.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Paises\Create.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Paises\Delete.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Paises\Details.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Paises\Edit.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Paises\Index.cshtml.g.cs
