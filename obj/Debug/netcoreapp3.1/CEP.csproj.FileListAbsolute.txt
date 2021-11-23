@@ -297,7 +297,6 @@ C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalys
 C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
@@ -429,3 +428,4 @@ C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Cidades\
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Cidades\Details.cshtml.g.cs
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Cidades\Edit.cshtml.g.cs
 C:\Users\Framework\source\repos\CEP\obj\Debug\netcoreapp3.1\Razor\Views\Cidades\Index.cshtml.g.cs
+C:\Users\Framework\source\repos\CEP\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll

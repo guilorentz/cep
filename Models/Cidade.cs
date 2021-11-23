@@ -9,17 +9,14 @@ using System.Threading.Tasks;
 
 namespace CEP.Models
 {   
-    [Table("Cidades")]
+ 
     public class Cidade
     {
-        [Display(Name = "Id")]
-        [Column("Id")]
         public int Id { get; set; }
-        [Display(Name = "Nome")]
-        [Column("Nome")]
+
         public string Nome { get; set; }
 
-        public int EstadoID { get; set; }
-        public Estado Estado { get; set; }
+        public int EstadoId { get; set; }
+        public virtual Estado Estado { get; set; }
     }
 }

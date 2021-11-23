@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace CEP
 {
@@ -25,9 +26,9 @@ namespace CEP
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string ConnectionString = "server=localhost; Database=DbCEP; Uid=root; Pwd=root";
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseMySql(ConnectionString));
+            options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllersWithViews();
         }
 

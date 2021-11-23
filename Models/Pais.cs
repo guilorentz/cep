@@ -7,16 +7,10 @@ using System.Threading.Tasks;
 
 namespace CEP.Models
 {
-    [Table("Países")]
     public class Pais
     {
-        [Display(Name = "Id")]
-        [Column("Id")]
         public int Id { get; set; }
-        [Display(Name = "Nome")]
-        [Column("Nome")]
-        public string Nome { get; set; }
 
-        public List<Estado> Estados { get; set; }
+        public string Nome { get; set; }
     }
 }
